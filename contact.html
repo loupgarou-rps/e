@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Loup-Garou RPS</title>
+  <meta name="description" content="Un bug, une idée de rôle, un serveur à présenter ? Écrivez au village.">
+  <meta name="theme-color" content="#1C1446">
+  <meta property="og:title" content="Contact — Loup-Garou RPS">
+  <meta property="og:description" content="Un bug, une idée de rôle, un serveur à présenter ? Écrivez au village.">
+  <meta property="og:image" content="assets/logo.svg">
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+  <script>try{var t=localStorage.getItem("lg-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=JetBrains+Mono:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="sr" href="#contenu">Aller au contenu</a>
+  <header class="entete">
+    <div class="conteneur">
+      <a class="marque" href="index.html">
+        <img src="assets/logo-mark.svg" alt="" width="48" height="48">
+        <span><b>Loup-Garou RPS</b><small>l'almanach du village</small></span>
+      </a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">☰</button>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="telecharger.html">Télécharger</a>
+        <a href="wiki.html">Wiki</a>
+        <a href="licence.html">Licence</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <button class="bascule" type="button"><span class="astre-mini"></span><span class="libelle">Jour</span></button>
+      </nav>
+    </div>
+  </header>
+  <main id="contenu">
+    <section class="fronton">
+      <div class="fronton__astre" aria-hidden="true"></div>
+      <div class="conteneur">
+        <span class="tampon" style="color:var(--cupidon)">Courrier</span>
+        <h1>Écrire <span class="riso">au village</span></h1>
+        <p>Un bug, une idée de rôle, un serveur à présenter&nbsp;? Glissez une lettre sous la porte — on y répond à l'aube.</p>
+      </div>
+    </section>
+
+    <div class="conteneur contact">
+      <form class="lettre" id="formulaire-contact" novalidate>
+        <fieldset class="puces-sujet">
+          <legend>C'est à propos de…</legend>
+          <input type="radio" name="sujet" id="s-bug" value="Bug" checked><label for="s-bug">Un bug</label>
+          <input type="radio" name="sujet" id="s-idee" value="Suggestion"><label for="s-idee">Une idée</label>
+          <input type="radio" name="sujet" id="s-serveur" value="Mon serveur"><label for="s-serveur">Mon serveur</label>
+          <input type="radio" name="sujet" id="s-autre" value="Autre"><label for="s-autre">Autre chose</label>
+        </fieldset>
+        <div class="deux-champs">
+          <div class="champ"><label for="nom">Votre nom</label><input id="nom" name="nom" required autocomplete="nickname" placeholder="Pseudo Minecraft"></div>
+          <div class="champ"><label for="email">Votre e-mail</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="pour la réponse"></div>
+        </div>
+        <div class="champ"><label for="serveur">Serveur &amp; versions <em style="font-family:var(--f-texte);font-size:.85em">(facultatif)</em></label><input id="serveur" name="serveur" placeholder="Paper 1.20.4, plugin 0.1.0, ProtocolLib 5.3.0"></div>
+        <div class="champ"><label for="message">Votre message</label><textarea id="message" name="message" required placeholder="Que s'est-il passé ? Quelles étapes pour le reproduire ?"></textarea></div>
+        <button class="bouton" type="submit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18v14H3z"/><path d="M3 6l9 7 9-7"/></svg>
+          Envoyer la lettre
+        </button>
+        <p class="retour" role="status">Votre messagerie s'ouvre avec la lettre prête à partir. Rien ne s'est passé&nbsp;? Écrivez directement à l'adresse indiquée à côté.</p>
+      </form>
+
+      <aside>
+        <div class="titre-section" style="margin-bottom:1.5rem">
+          <span class="chapitre">Autres chemins</span>
+          <h2 style="font-size:clamp(1.8rem,4vw,2.6rem)">Le carrefour</h2>
+        </div>
+        <div class="canaux">
+          <a class="canal" data-canal="email" href="#">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" aria-hidden="true"><path d="M6 12h36v24H6z"/><path d="M6 13l18 13 18-13"/></svg>
+            <div><b>Par e-mail</b><span class="adresse">…</span></div>
+          </a>
+          <a class="canal" data-canal="discord" href="#" rel="noopener">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" aria-hidden="true"><path d="M8 10h32v22H22l-9 7v-7H8z"/><circle cx="18" cy="21" r="1.8" fill="currentColor"/><circle cx="30" cy="21" r="1.8" fill="currentColor"/></svg>
+            <div><b>Le feu de camp</b><span>Discord de la communauté</span></div>
+          </a>
+          <a class="canal" data-canal="depot" href="#" rel="noopener">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6h20l6 6v30H8V6z"/><path d="M16 20h16M16 28h16M16 36h9"/></svg>
+            <div><b>Signaler un bug</b><span>Suivi des tickets</span></div>
+          </a>
+        </div>
+        <div class="encadre astuce" style="margin-top:2rem">
+          <strong>Pour un bug</strong>
+          <p>Précisez la version de Paper et du plugin, les rôles en jeu, et joignez les lignes d'erreur de la console. On trouvera le coupable plus vite que les villageois.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <svg class="foret" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 140 L0 100 L6 97 L14 62 L23 62 L32 19 L41 62 L50 62 L58 97 L57 87 L63 57 L70 57 L78 20 L85 57 L92 57 L99 87 L98 85 L103 38 L109 38 L115 -19 L121 38 L128 38 L133 85 L135 80 L142 56 L150 56 L159 26 L167 56 L176 56 L183 80 L184 88 L193 71 L203 71 L213 51 L224 71 L234 71 L243 88 L240 96 L247 57 L254 57 L261 9 L268 57 L276 57 L282 96 L283 96 L292 63 L301 63 L311 24 L320 63 L330 63 L338 96 L335 76 L340 26 L346 26 L352 -34 L358 26 L364 26 L369 76 L370 76 L375 46 L382 46 L388 8 L395 46 L401 46 L407 76 L407 86 L413 57 L420 57 L427 21 L434 57 L440 57 L446 86 L449 96 L458 71 L468 71 L478 42 L489 71 L499 71 L508 96 L509 94 L520 64 L532 64 L545 26 L557 64 L570 64 L581 94 L579 96 L587 70 L596 70 L605 38 L615 70 L624 70 L632 96 L634 91 L643 64 L654 64 L665 31 L676 64 L687 64 L696 91 L693 94 L698 45 L704 45 L711 -15 L717 45 L723 45 L728 94 L732 94 L742 63 L754 63 L766 24 L778 63 L789 63 L800 94 L798 81 L807 52 L816 52 L826 17 L836 52 L846 52 L854 81 L854 94 L863 76 L873 76 L884 53 L894 76 L904 76 L913 94 L912 99 L919 82 L928 82 L937 61 L945 82 L954 82 L962 99 L961 84 L969 44 L977 44 L986 -4 L994 44 L1003 44 L1010 84 L1013 89 L1023 63 L1035 63 L1048 31 L1060 63 L1072 63 L1083 89 L1081 79 L1088 49 L1097 49 L1106 12 L1116 49 L1125 49 L1132 79 L1132 93 L1140 63 L1148 63 L1157 26 L1166 63 L1175 63 L1182 93 L1181 97 L1187 55 L1195 55 L1202 4 L1209 55 L1216 55 L1223 97 L1223 79 L1229 36 L1237 36 L1244 -17 L1252 36 L1259 36 L1266 79 L1269 78 L1280 30 L1292 30 L1304 -30 L1317 30 L1329 30 L1340 78 L1339 86 L1348 48 L1359 48 L1370 2 L1380 48 L1391 48 L1401 86 L1397 91 L1402 65 L1408 65 L1413 34 L1419 65 L1425 65 L1430 91 L1431 83 L1437 54 L1444 54 L1451 19 L1458 54 L1465 54 L1471 83 L1440 100 L1440 140 Z"/></svg>
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="pied__grille">
+        <div class="pied__marque">
+          <img src="assets/logo.svg" alt="Logo Loup-Garou RPS">
+          <div><b>Loup-Garou RPS</b><span class="italique">Le village s'endort. Pas tout le monde.</span></div>
+        </div>
+        <div>
+          <h4>Le plugin</h4>
+          <ul><li><a href="telecharger.html">Télécharger</a></li><li><a href="telecharger.html#installation">Installation</a></li><li><a href="telecharger.html#journal">Journal des versions</a></li></ul>
+        </div>
+        <div>
+          <h4>L'almanach</h4>
+          <ul><li><a href="wiki.html#roles">Les rôles</a></li><li><a href="wiki.html#commandes">Commandes</a></li><li><a href="wiki.html#faq">FAQ</a></li></ul>
+        </div>
+        <div>
+          <h4>Le village</h4>
+          <ul><li><a href="contact.html">Contact</a></li><li><a href="licence.html">Licence MIT</a></li></ul>
+        </div>
+      </div>
+      <div class="pied__bas">
+        <span>© 2026 LoupGarouRPS — code distribué sous <a href="licence.html">licence MIT</a>.</span>
+        <span>Projet de fans, non affilié à Mojang, Microsoft ni aux éditeurs du jeu de cartes original.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

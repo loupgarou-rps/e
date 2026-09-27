@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wiki — Loup-Garou RPS</title>
+  <meta name="description" content="L'almanach complet : installation, maps, commandes, rôles, déroulement d'une partie, configuration.">
+  <meta name="theme-color" content="#1C1446">
+  <meta property="og:title" content="Wiki — Loup-Garou RPS">
+  <meta property="og:description" content="L'almanach complet : installation, maps, commandes, rôles, déroulement d'une partie, configuration.">
+  <meta property="og:image" content="assets/logo.svg">
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+  <script>try{var t=localStorage.getItem("lg-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=JetBrains+Mono:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="sr" href="#contenu">Aller au contenu</a>
+  <header class="entete">
+    <div class="conteneur">
+      <a class="marque" href="index.html">
+        <img src="assets/logo-mark.svg" alt="" width="48" height="48">
+        <span><b>Loup-Garou RPS</b><small>l'almanach du village</small></span>
+      </a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">☰</button>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="telecharger.html">Télécharger</a>
+        <a href="wiki.html" aria-current="page">Wiki</a>
+        <a href="licence.html">Licence</a>
+        <a href="contact.html">Contact</a>
+        <button class="bascule" type="button"><span class="astre-mini"></span><span class="libelle">Jour</span></button>
+      </nav>
+    </div>
+  </header>
+  <main id="contenu">
+    <section class="fronton">
+      <div class="fronton__astre" aria-hidden="true"></div>
+      <div class="conteneur">
+        <span class="tampon" style="color:var(--sortilege)">Wiki</span>
+        <h1><span class="riso-violet">L'almanach</span><br>du village</h1>
+        <p>Tout ce qu'il faut savoir pour installer, configurer et animer une partie — de la première maison au dernier bûcher.</p>
+      </div>
+    </section>
+
+    <div class="conteneur wiki">
+      <aside class="sommaire" aria-label="Sommaire du wiki">
+        <label for="recherche-wiki">Chercher dans l'almanach</label>
+        <input id="recherche-wiki" type="search" placeholder="sorcière, vote, pack…" autocomplete="off">
+        <ol>
+          <li><a href="#premiere-partie">Première partie</a></li>
+          <li><a href="#maps">Maps &amp; maisons</a></li>
+          <li><a href="#commandes">Commandes</a></li>
+          <li><a href="#permissions">Permissions</a></li>
+          <li><a href="#deroulement">Déroulement</a></li>
+          <li><a href="#roles">Les rôles</a></li>
+          <li><a href="#victoire">Conditions de victoire</a></li>
+          <li><a href="#chats">Chats privés</a></li>
+          <li><a href="#composition">Composition des rôles</a></li>
+          <li><a href="#configuration">Configuration</a></li>
+          <li><a href="#pack">Resource pack &amp; sons</a></li>
+          <li><a href="#skins">Skins par rôle</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+        <p class="vide">Rien trouvé… essaie un autre mot.</p>
+      </aside>
+
+      <article class="article">
+
+        <section id="premiere-partie">
+          <h2><span class="rom">I.</span> Première partie</h2>
+          <p>Vous avez installé le plugin (voir <a href="telecharger.html#installation">Télécharger</a>)&nbsp;? Voici le chemin le plus court jusqu'à la première nuit.</p>
+          <ol class="etapes">
+            <li><div><h3>Placer le lobby</h3><p>Allez là où les joueurs doivent attendre et tapez <code>/lg setlobbyspawn</code>.</p></div></li>
+            <li><div><h3>Déclarer la map</h3><p><code>/lg map create thiercelieux world_village</code> — le nom de la map, puis le monde où elle se trouve.</p></div></li>
+            <li><div><h3>Enregistrer maisons et feu de camp</h3><p>Une maison par joueur maximum, un feu de camp, un point de vue du bûcher. Détails au <a href="#maps">chapitre suivant</a>.</p></div></li>
+            <li><div><h3>Créer le salon</h3><p><code>/lg create game village 8 12 thiercelieux</code> — nom, minimum, maximum, map.</p></div></li>
+            <li><div><h3>Rassembler le village</h3><p>Les joueurs rejoignent avec <code>/lg join village</code> ou la <strong>boussole des salons</strong>. Plein&nbsp;? La partie se lance seule après 10 secondes. Sinon&nbsp;: <code>/lg start village</code>.</p></div></li>
+          </ol>
+        </section>
+
+        <section id="maps">
+          <h2><span class="rom">II.</span> Maps &amp; maisons</h2>
+          <p>Une <strong>map</strong> décrit un village jouable&nbsp;: son monde, ses maisons, son feu de camp et l'endroit d'où tout le monde regarde les exécutions. Toutes ces commandes se tapent <em>en jeu</em>, à l'endroit concerné.</p>
+          <div class="tableau-wrap">
+            <table>
+              <thead><tr><th>Commande</th><th>Où se placer</th><th>Effet</th></tr></thead>
+              <tbody>
+                <tr><td><code>/lg map create &lt;map&gt; &lt;monde&gt;</code></td><td>N'importe où</td><td>Déclare une nouvelle map dans ce monde.</td></tr>
+                <tr><td><code>/lg map addhouse &lt;map&gt;</code></td><td>Dans la maison, <strong>face à la porte</strong></td><td>Ajoute une maison (lit, porte, position de réveil).</td></tr>
+                <tr><td><code>/lg map sethousemailbox &lt;map&gt; &lt;n°&gt;</code></td><td>En visant le paillasson</td><td>Associe un paillasson à la maison n°X (cible alternative à la porte).</td></tr>
+                <tr><td><code>/lg map setcampfire &lt;map&gt;</code></td><td>Sur le feu de camp</td><td>Lieu de rassemblement du jour, des annonces et du bûcher.</td></tr>
+                <tr><td><code>/lg map setkillpov &lt;map&gt;</code></td><td>Là d'où regarder</td><td>Point de vue imposé à tous pendant une exécution.</td></tr>
+                <tr><td><code>/lg map list</code> · <code>info &lt;map&gt;</code> · <code>delete &lt;map&gt;</code></td><td>—</td><td>Lister, inspecter, supprimer.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="encadre astuce">
+            <strong>Bon à savoir</strong>
+            <p>Un salon refuse d'être créé si la map a moins de maisons que son maximum de joueurs. Une map ne peut servir qu'à un seul salon à la fois. Si le monde n'est pas chargé au lancement, chargez-le (par ex. <code>/mv load &lt;monde&gt;</code>) et réessayez.</p>
+          </div>
+        </section>
+
+        <section id="commandes">
+          <h2><span class="rom">III.</span> Commandes</h2>
+          <p>Tout passe par <code>/lg</code>. La colonne « Qui » indique la permission requise.</p>
+          <div class="tableau-wrap">
+            <table>
+              <thead><tr><th>Commande</th><th>Qui</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><code>/lg join &lt;salon&gt;</code></td><td>Joueur</td><td>Rejoindre un salon en attente (vous êtes amené au feu de camp).</td></tr>
+                <tr><td><code>/lg leave</code></td><td>Joueur</td><td>Quitter un salon en attente. En pleine partie, il faut se déconnecter.</td></tr>
+                <tr><td><code>/lg list</code></td><td>Joueur</td><td>Liste des salons, joueurs, état et map.</td></tr>
+                <tr><td><code>/lg vote &lt;pseudo|moi&gt;</code></td><td>Joueur</td><td>Voter pendant l'élection ou le vote du village (le clic droit fait pareil).</td></tr>
+                <tr><td><code>/lg create game &lt;nom&gt; &lt;min&gt; &lt;max&gt; &lt;map&gt;</code></td><td>Admin</td><td>Créer un salon.</td></tr>
+                <tr><td><code>/lg start &lt;salon&gt;</code></td><td>Admin</td><td>Lancer la partie (si le minimum est atteint).</td></tr>
+                <tr><td><code>/lg stop &lt;salon&gt;</code></td><td>Admin</td><td>Arrêter une partie en cours.</td></tr>
+                <tr><td><code>/lg delete &lt;salon&gt;</code></td><td>Admin</td><td>Supprimer un salon en attente ou terminé.</td></tr>
+                <tr><td><code>/lg roles set|list|reset &lt;salon&gt; …</code></td><td>Admin</td><td>Composition manuelle des rôles (voir <a href="#composition">Composition</a>).</td></tr>
+                <tr><td><code>/lg map …</code></td><td>Admin</td><td>Gestion des maps (voir <a href="#maps">Maps</a>).</td></tr>
+                <tr><td><code>/lg setlobbyspawn</code></td><td>Admin</td><td>Placer le spawn du lobby à votre position.</td></tr>
+                <tr><td><code>/lg pack</code></td><td>Admin</td><td>Recalculer et renvoyer le resource pack à tout le monde.</td></tr>
+                <tr><td><code>/lg skins</code></td><td>Admin</td><td>Recharger les skins de rôles après ajout d'un PNG.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Dans le lobby, les admins ont aussi deux objets&nbsp;: <strong>Lancer la partie</strong> et <strong>Temps de jeu</strong>, un menu d'horloges pour régler la durée de chaque créneau sans toucher au fichier de configuration.</p>
+        </section>
+
+        <section id="permissions">
+          <h2><span class="rom">IV.</span> Permissions</h2>
+          <div class="tableau-wrap">
+            <table>
+              <thead><tr><th>Permission</th><th>Par défaut</th><th>Donne accès à</th></tr></thead>
+              <tbody>
+                <tr><td><code>loupgarou.use</code></td><td>Tout le monde</td><td>Commandes de base&nbsp;: rejoindre, quitter, lister, voter.</td></tr>
+                <tr><td><code>loupgarou.admin</code></td><td>Opérateurs</td><td>Salons, maps, maisons, composition des rôles, pack, skins, réglage des durées.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="deroulement">
+          <h2><span class="rom">V.</span> Déroulement d'une partie</h2>
+          <h3>La mise en place</h3>
+          <p>Au lancement, chaque joueur reçoit une maison au hasard, passe en mode Aventure (impossible de casser la map), récupère toute sa vie et reçoit deux objets&nbsp;: sa <strong>carte de rôle</strong> en main secondaire et un <strong>livre</strong> qui explique son pouvoir.</p>
+          <h3>La nuit</h3>
+          <p>Le monde s'assombrit, un hurlement retentit et tout le monde est aveuglé. Les rôles sont appelés <strong>un par un</strong>&nbsp;: seul le rôle appelé rouvre les yeux, le temps de son créneau (une barre de boss affiche le temps restant). Pour agir, on se rend physiquement à la <strong>porte</strong> (ou au paillasson) de la maison visée et on fait un clic droit.</p>
+          <div class="tableau-wrap">
+            <table>
+              <thead><tr><th>Ordre</th><th>Première nuit</th><th>Nuits suivantes</th><th>Durée</th></tr></thead>
+              <tbody>
+                <tr><td>0</td><td>—</td><td>Juge <em>(nuits 2, 4, 6…)</em></td><td>25 s</td></tr>
+                <tr><td>1</td><td>Cupidon</td><td>Salvateur</td><td>40 s / 30 s</td></tr>
+                <tr><td>2</td><td>Salvateur</td><td>Voyante</td><td>30 s / 20 s</td></tr>
+                <tr><td>3</td><td>Voyante</td><td>Loups-Garous</td><td>20 s / 90 s</td></tr>
+                <tr><td>4</td><td>Loups-Garous</td><td>Infect Père des Loups</td><td>90 s / 30 s</td></tr>
+                <tr><td>5</td><td>Infect Père des Loups</td><td>Loup Blanc</td><td>30 s / 20 s</td></tr>
+                <tr><td>6</td><td>Loup Blanc</td><td>Sorcière</td><td>20 s / 45 s</td></tr>
+                <tr><td>7</td><td>Sorcière</td><td>Voleur</td><td>45 s / 25 s</td></tr>
+                <tr><td>8</td><td>Voleur</td><td>Corbeau</td><td>25 s / 15 s</td></tr>
+                <tr><td>9</td><td>Corbeau</td><td>—</td><td>15 s</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>L'aube</h3>
+          <p>Le coq chante, le soleil se lève et les portes se rouvrent après quelques secondes. Tout le monde se retrouve au <strong>feu de camp</strong>&nbsp;: on y annonce les morts de la nuit — ou la bonne nouvelle que personne n'est mort. La carte de chaque défunt est accrochée au-dessus de sa porte et du feu de camp.</p>
+          <h3>Le jour</h3>
+          <ol>
+            <li><strong>Élection du Capitaine</strong> (premier jour, 45&nbsp;s)&nbsp;: son vote compte double et il tranche les égalités.</li>
+            <li><strong>Débat</strong> (2&nbsp;min)&nbsp;: on accuse, on se défend, on ment.</li>
+            <li><strong>Vote du village</strong> (45&nbsp;s)&nbsp;: <strong>clic droit à main nue sur un joueur</strong> pour voter contre lui. Un trait de particules part de l'accusateur vers l'accusé. On peut changer d'avis en cliquant quelqu'un d'autre. Pour voter contre soi-même&nbsp;: accroupi + clic droit sur un bloc, ou <code>/lg vote moi</code>.</li>
+            <li><strong>Le bûcher</strong>&nbsp;: tout le monde est placé au point de vue, les battements de cœur s'accélèrent, l'éclair frappe… puis le rôle est révélé.</li>
+          </ol>
+          <div class="encadre">
+            <strong>Égalité&nbsp;?</strong>
+            <p>Le Capitaine, s'il est vivant, départage via un menu de têtes de joueurs. Chaque phase se termine au bout du minuteur ou dès que tous les vivants ont voté.</p>
+          </div>
+        </section>
+
+        <section id="roles">
+          <h2><span class="rom">VI.</span> Les rôles</h2>
+          <p>Loup-Garou et Villageois peuvent être présents en plusieurs exemplaires&nbsp;; tous les autres rôles sont uniques dans une partie.</p>
+          <div class="fiches">
+            <article class="fiche loups" id="role-loup-garou">
+              <img src="assets/cartes/role_loup.png" alt="Carte Loup-Garou" loading="lazy">
+              <div><h3>Loup-Garou</h3><div class="fiche__tags"><span class="pastille loups">Loups</span><span class="pastille">Chaque nuit · 90 s</span></div>
+              <p>Chaque nuit, la meute se retrouve (Loup Blanc et Infect Père compris) et désigne une victime commune d'un clic droit sur sa porte. La majorité l'emporte. Impossible de viser un coéquipier. Pendant ce créneau, le chat de la meute est privé.</p></div>
+            </article>
+            <article class="fiche loups" id="role-infect-pere">
+              <img src="assets/cartes/role_infectpere.png" alt="Carte Infect Père des Loups" loading="lazy">
+              <div><h3>Infect Père des Loups</h3><div class="fiche__tags"><span class="pastille loups">Loups</span><span class="pastille">Chaque nuit · 30 s</span></div>
+              <p>Vote avec la meute. À son propre créneau, il peut <strong>infecter</strong> la victime des loups en cliquant sa porte&nbsp;: elle survit, garde son rôle et son pouvoir, mais joue et gagne désormais avec les loups. Deux infections maximum pour toute la partie.</p></div>
+            </article>
+            <article class="fiche solo" id="role-loup-blanc">
+              <img src="assets/cartes/role_loupblanc.png" alt="Carte Loup Blanc" loading="lazy">
+              <div><h3>Loup Blanc</h3><div class="fiche__tags"><span class="pastille solo">Solitaire</span><span class="pastille">Chaque nuit · 20 s</span></div>
+              <p>Vote avec la meute comme un loup ordinaire… mais il ne gagne que s'il est le <strong>dernier survivant</strong>, loups compris. À son créneau, il tue une personne de son choix, loup ou non.</p></div>
+            </article>
+            <article class="fiche" id="role-voyante">
+              <img src="assets/cartes/role_voyante.png" alt="Carte Voyante" loading="lazy">
+              <div><h3>Voyante</h3><div class="fiche__tags"><span class="pastille village">Village</span><span class="pastille">Chaque nuit · 20 s</span></div>
+              <p>Chaque nuit, elle clique sur la porte (ou le paillasson) d'une maison et découvre en secret le rôle de son occupant. Une seule maison par nuit.</p></div>
+            </article>
+            <article class="fiche" id="role-sorciere">
+              <img src="assets/cartes/role_sorciere.png" alt="Carte Sorcière" loading="lazy">
+              <div><h3>Sorcière</h3><div class="fiche__tags"><span class="pastille village">Village</span><span class="pastille">Chaque nuit · 45 s</span></div>
+              <p>Deux fioles, chacune utilisable <strong>une seule fois</strong> dans la partie. Fiole de Vie&nbsp;: sauve la victime des loups (clic sur <em>sa</em> porte). Fiole de Mort&nbsp;: tue qui elle veut. Il faut tenir la fiole en main avant de cliquer.</p></div>
+            </article>
+            <article class="fiche" id="role-salvateur">
+              <img src="assets/cartes/role_salvateur.png" alt="Carte Salvateur" loading="lazy">
+              <div><h3>Salvateur</h3><div class="fiche__tags"><span class="pastille village">Village</span><span class="pastille">Chaque nuit · 30 s</span></div>
+              <p>Protège une maison d'un clic droit sur sa porte&nbsp;: si les loups l'attaquent, l'habitant survit (et le village l'apprend à l'aube). Jamais la même personne deux nuits de suite.</p></div>
+            </article>
+            <article class="fiche" id="role-cupidon">
+              <img src="assets/cartes/role_cupidon.png" alt="Carte Cupidon" loading="lazy">
+              <div><h3>Cupidon</h3><div class="fiche__tags"><span class="pastille village">Village</span><span class="pastille">Nuit 1 · 40 s</span></div>
+              <p>La première nuit seulement, il tire une flèche sur la porte de deux maisons (la sienne peut en faire partie). Les deux amoureux sont liés&nbsp;: si l'un meurt, l'autre meurt de chagrin. Ils se parlent en privé en commençant leur message par <code>!</code>.</p></div>
+            </article>
+            <article class="fiche" id="role-juge">
+              <img src="assets/cartes/role_juge.png" alt="Carte Juge" loading="lazy">
+              <div><h3>Juge</h3><div class="fiche__tags"><span class="pastille village">Village</span><span class="pastille">Nuits 2, 4, 6… · 25 s</span></div>
+              <p>Une nuit sur deux à partir de la deuxième, il agit <strong>en premier</strong>&nbsp;: la personne dont il clique la porte ne pourra pas jouer son rôle cette nuit-là (même un loup pendant le vote de la meute). Le lendemain, le village apprend qu'elle n'a pas pu agir — sans savoir qui l'a réduite au silence.</p></div>
+            </article>
+            <article class="fiche" id="role-voleur">
+              <img src="assets/cartes/role_voleur.png" alt="Carte Voleur" loading="lazy">
+              <div><h3>Voleur</h3><div class="fiche__tags"><span class="pastille village">Village</span><span class="pastille">25 s</span></div>
+              <p>Il clique sur deux portes distinctes&nbsp;: les rôles de leurs habitants sont échangés. Il peut viser sa propre porte pour voler un rôle. Les joueurs concernés reçoivent leur nouvelle carte et leur nouveau livre.</p></div>
+            </article>
+            <article class="fiche" id="role-corbeau">
+              <img src="assets/cartes/role_corbeau.png" alt="Carte Corbeau" loading="lazy">
+              <div><h3>Corbeau</h3><div class="fiche__tags"><span class="pastille village">Village</span><span class="pastille">Chaque nuit · 15 s</span></div>
+              <p>Il désigne une maison&nbsp;: son habitant recevra <strong>2 voix de plus</strong> au vote du village du lendemain (pas à l'élection du Capitaine). Personne ne sait d'où elles viennent.</p></div>
+            </article>
+            <article class="fiche" id="role-petite-fille">
+              <img src="assets/cartes/role_petitefille.png" alt="Carte Petite Fille" loading="lazy">
+              <div><h3>Petite Fille</h3><div class="fiche__tags"><span class="pastille village">Village</span><span class="pastille">Pendant le tour des loups</span></div>
+              <p>Pendant le créneau des loups, elle peut sortir espionner la réunion sans voter. Elle lit le chat de la meute… sans savoir qui parle. Gare à ne pas se faire repérer.</p></div>
+            </article>
+            <article class="fiche" id="role-chasseur">
+              <img src="assets/cartes/role_chasseur.png" alt="Carte Chasseur" loading="lazy">
+              <div><h3>Chasseur</h3><div class="fiche__tags"><span class="pastille village">Village</span><span class="pastille">À sa mort</span></div>
+              <p>Rien à faire de son vivant. À sa mort, il reçoit une arbalète chargée&nbsp;: un tir, une exécution, avant de quitter le village.</p></div>
+            </article>
+            <article class="fiche" id="role-idiot">
+              <img src="assets/cartes/role_idiot.png" alt="Carte Idiot" loading="lazy">
+              <div><h3>Idiot</h3><div class="fiche__tags"><span class="pastille village">Village</span><span class="pastille">Premier vote</span></div>
+              <p>Si le village l'envoie au bûcher lors du <strong>tout premier vote</strong>, la partie s'arrête net et il gagne seul.</p></div>
+            </article>
+            <article class="fiche" id="role-villageois">
+              <img src="assets/cartes/role_villageois.png" alt="Carte Villageois" loading="lazy">
+              <div><h3>Villageois</h3><div class="fiche__tags"><span class="pastille village">Village</span></div>
+              <p>Aucun pouvoir, toute la responsabilité. Observer, débattre, voter juste&nbsp;: c'est lui qui fait tomber les loups.</p></div>
+            </article>
+            <article class="fiche titre" id="role-capitaine">
+              <img src="assets/cartes/role_capitaine.png" alt="Carte Capitaine" loading="lazy">
+              <div><h3>Capitaine</h3><div class="fiche__tags"><span class="pastille jaune">Titre élu</span><span class="pastille">Jour 1</span></div>
+              <p>Pas un rôle distribué mais un titre, élu par le village le premier jour. Son vote compte double et il départage les égalités.</p></div>
+            </article>
+          </div>
+        </section>
+
+        <section id="victoire">
+          <h2><span class="rom">VII.</span> Conditions de victoire</h2>
+          <div class="tableau-wrap">
+            <table>
+              <thead><tr><th>Camp</th><th>Gagne quand…</th></tr></thead>
+              <tbody>
+                <tr><td><span class="pastille village">Village</span></td><td>Il ne reste plus aucun loup ni Loup Blanc en vie.</td></tr>
+                <tr><td><span class="pastille loups">Loups</span></td><td>Il ne reste plus aucun villageois ni Loup Blanc (les infectés comptent comme loups).</td></tr>
+                <tr><td><span class="pastille solo">Loup Blanc</span></td><td>Il est le seul survivant.</td></tr>
+                <tr><td><span class="pastille" style="background:var(--cupidon)">Amoureux</span></td><td>Ils sont les deux derniers en vie.</td></tr>
+                <tr><td><span class="pastille village">Idiot</span></td><td>Il est condamné au tout premier vote du village.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="chats">
+          <h2><span class="rom">VIII.</span> Chats privés</h2>
+          <ul>
+            <li><strong>Les morts</strong> ne parlent qu'entre eux, pendant toute la partie.</li>
+            <li><strong>Les amoureux</strong>&nbsp;: un message commençant par <code>!</code> n'est envoyé qu'à l'autre amoureux.</li>
+            <li><strong>La meute</strong>&nbsp;: pendant le créneau des loups, leurs messages restent entre loups (la Petite Fille les lit, anonymisés).</li>
+            <li>Sinon, le chat reste le chat normal.</li>
+          </ul>
+        </section>
+
+        <section id="composition">
+          <h2><span class="rom">IX.</span> Composition des rôles</h2>
+          <p>Sans réglage, le plugin distribue les rôles selon la table <code>distribution</code> de <code>config.yml</code> (le reste est complété en Villageois). Pour un salon précis, fixez la composition à la main&nbsp;:</p>
+          <pre data-copier><code>/lg roles set village LOUP_GAROU 3
+/lg roles set village SORCIERE 1
+/lg roles list village
+/lg roles reset village</code></pre>
+          <p>Noms de rôles utilisables&nbsp;: <code>LOUP_GAROU</code>, <code>INFECT_PERE_DES_LOUPS</code>, <code>LOUP_BLANC</code>, <code>VOYANTE</code>, <code>SORCIERE</code>, <code>SALVATEUR</code>, <code>CUPIDON</code>, <code>JUGE</code>, <code>VOLEUR</code>, <code>CORBEAU</code>, <code>PETITE_FILLE</code>, <code>CHASSEUR</code>, <code>IDIOT</code>, <code>VILLAGEOIS</code>.</p>
+        </section>
+
+        <section id="configuration">
+          <h2><span class="rom">X.</span> Configuration</h2>
+          <p>Le fichier <code>plugins/LoupGarouRPS/config.yml</code>, section par section. Les durées sont aussi réglables en jeu via l'objet <strong>Temps de jeu</strong>&nbsp;; elles s'appliquent dès la partie suivante.</p>
+          <pre data-copier><code><span class="c"># Durée du créneau de chaque rôle, en secondes</span>
+<span class="k">timers:</span>
+  CUPIDON: <span class="v">40</span>
+  SALVATEUR: <span class="v">30</span>
+  VOYANTE: <span class="v">20</span>
+  LOUP_GAROU: <span class="v">90</span>
+  INFECT_PERE_DES_LOUPS: <span class="v">30</span>
+  LOUP_BLANC: <span class="v">20</span>
+  SORCIERE: <span class="v">45</span>
+  VOLEUR: <span class="v">25</span>
+  CORBEAU: <span class="v">15</span>
+  JUGE: <span class="v">25</span>
+
+<span class="c"># Délai avant la réouverture des portes à l'aube</span>
+<span class="k">aube:</span>
+  delai-ouverture-portes: <span class="v">5</span>
+
+<span class="c"># Phases de jour</span>
+<span class="k">jour:</span>
+  debat-secondes: <span class="v">120</span>
+  election-capitaine-secondes: <span class="v">45</span>
+  vote-village-secondes: <span class="v">45</span>
+
+<span class="c"># Skins par rôle (voir chapitre Skins)</span>
+<span class="k">skins:</span>
+  enabled: <span class="v">true</span>
+  mineskin-cle-api: <span class="s">""</span>
+  mineskin-visibilite: <span class="s">"unlisted"</span>
+
+<span class="c"># Resource pack envoyé par le plugin</span>
+<span class="k">resource-pack:</span>
+  actif: <span class="v">true</span>
+  url: <span class="s">""</span>            <span class="c"># lien direct, ou vide pour l'hébergement intégré</span>
+  obligatoire: <span class="v">false</span>
+  message: <span class="s">"§6Loup-Garou §7- cartes de rôles et ambiance sonore"</span>
+
+<span class="c"># Mini serveur HTTP (si url est vide)</span>
+<span class="k">serveur-http:</span>
+  adresse-publique: <span class="s">"CHANGE_ME"</span>
+  port: <span class="v">25597</span>
+
+<span class="c"># Rôles distribués par défaut selon le nombre de joueurs</span>
+<span class="k">distribution:</span>
+  8: [LOUP_GAROU, LOUP_GAROU, VOYANTE, SORCIERE, CHASSEUR, CUPIDON]
+  12: [LOUP_GAROU x3, VOYANTE, SORCIERE, CHASSEUR, CUPIDON, SALVATEUR, PETITE_FILLE]
+  16: [LOUP_GAROU x3, LOUP_BLANC, VOYANTE, SORCIERE, CHASSEUR, CUPIDON,
+       SALVATEUR, PETITE_FILLE, VOLEUR, CORBEAU, IDIOT]</code></pre>
+          <div class="encadre alerte">
+            <strong>adresse-publique</strong>
+            <p>Doit être l'IP ou le domaine que les <em>joueurs</em> peuvent joindre — jamais <code>localhost</code>. Le port doit être ouvert et différent de celui du serveur Minecraft.</p>
+          </div>
+        </section>
+
+        <section id="pack">
+          <h2><span class="rom">XI.</span> Resource pack &amp; sons</h2>
+          <p>Le pack contient les 15 cartes (objets <code>PAPER</code> avec un <code>CustomModelData</code> de 101 à 116) et tous les sons <code>loupgarou:…</code>. Le plugin l'envoie à chaque connexion avec le bon SHA-1&nbsp;; après une mise à jour du zip, un simple <code>/lg pack</code> suffit.</p>
+          <h3>Mettre vos propres sons</h3>
+          <p>Déposez un fichier <strong>.ogg mono 44,1&nbsp;kHz</strong> au bon chemin dans <code>assets/loupgarou/sounds/</code>, puis relancez <code>package.ps1</code>. Plusieurs variantes jouées au hasard&nbsp;: <code>ambiance.ogg</code>, <code>ambiance_2.ogg</code>…</p>
+          <div class="tableau-wrap">
+            <table>
+              <thead><tr><th>Fichier</th><th>Quand</th></tr></thead>
+              <tbody>
+                <tr><td><code>partie/debut.ogg</code></td><td>Lancement de la partie</td></tr>
+                <tr><td><code>nuit/tombe.ogg</code></td><td>« La nuit tombe… »</td></tr>
+                <tr><td><code>nuit/hurlement.ogg</code></td><td>Le monde s'assombrit</td></tr>
+                <tr><td><code>nuit/ambiance.ogg</code></td><td>Toutes les 18–32 s pendant la nuit</td></tr>
+                <tr><td><code>nuit/appel.ogg</code></td><td>C'est à votre rôle de jouer</td></tr>
+                <tr><td><code>jour/aube.ogg</code></td><td>Le soleil se lève</td></tr>
+                <tr><td><code>jour/reveil.ogg</code></td><td>« Le village se réveille »</td></tr>
+                <tr><td><code>mort/tension.ogg</code></td><td>Bûcher, avant l'éclair (répété)</td></tr>
+                <tr><td><code>mort/revelation.ogg</code></td><td>Révélation du rôle d'un mort</td></tr>
+                <tr><td><code>mort/aucune.ogg</code></td><td>Personne n'est mort cette nuit</td></tr>
+                <tr><td><code>vote/debut.ogg</code></td><td>Ouverture d'un vote</td></tr>
+                <tr><td><code>vote/accusation.ogg</code></td><td>Quelqu'un vote contre quelqu'un</td></tr>
+                <tr><td><code>vote/verdict.ogg</code></td><td>Condamnation</td></tr>
+                <tr><td><code>vote/capitaine.ogg</code></td><td>Capitaine élu</td></tr>
+                <tr><td><code>minuteur/tic.ogg</code></td><td>5 dernières secondes d'un vote</td></tr>
+                <tr><td><code>partie/victoire_village.ogg</code></td><td>Victoire du village</td></tr>
+                <tr><td><code>partie/victoire_loups.ogg</code></td><td>Victoire des loups / du Loup Blanc</td></tr>
+                <tr><td><code>partie/fin.ogg</code></td><td>Autres fins (amoureux, Idiot, arrêt)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="encadre astuce">
+            <strong>Textures</strong>
+            <p>Gardez des cartes en 512×512 (puissance de 2)&nbsp;: une taille exotique désactive les mipmaps de tout le jeu pour les joueurs qui ont le pack.</p>
+          </div>
+        </section>
+
+        <section id="skins">
+          <h2><span class="rom">XII.</span> Skins par rôle</h2>
+          <p>Pendant son créneau nocturne — et seulement à ce moment-là — un joueur prend le skin de son rôle. Déposez un skin Minecraft 64×64 par rôle dans <code>plugins/LoupGarouRPS/skins/</code> (<code>loup_garou.png</code>, <code>voyante.png</code>, <code>juge.png</code>…), puis tapez <code>/lg skins</code>.</p>
+          <p>Minecraft n'affiche que les skins signés par Mojang&nbsp;: chaque PNG est envoyé <strong>une seule fois</strong> à MineSkin, qui renvoie la version signée, mise en cache dans <code>skins/signatures.yml</code>. Aucun port à ouvrir. Une clé API gratuite (account.mineskin.org) accélère la génération.</p>
+        </section>
+
+        <section id="faq">
+          <h2><span class="rom">XIII.</span> FAQ</h2>
+          <details class="faq"><summary>Les joueurs voient la carte d'un autre rôle (ex. à la place du Juge).</summary><div><p>Leur client a gardé un ancien pack en cache. Videz <code>resource-pack=</code> et <code>resource-pack-sha1=</code> dans <code>server.properties</code> et laissez le plugin envoyer le pack, puis faites <code>/lg pack</code>.</p></div></details>
+          <details class="faq"><summary>« Le monde … n'est pas chargé » au lancement.</summary><div><p>Le monde de la map doit être chargé avant <code>/lg start</code>. Avec Multiverse&nbsp;: <code>/mv load &lt;monde&gt;</code>.</p></div></details>
+          <details class="faq"><summary>Je ne peux pas créer le salon : pas assez de maisons.</summary><div><p>La map doit compter au moins autant de maisons que le maximum de joueurs du salon. Ajoutez-en avec <code>/lg map addhouse &lt;map&gt;</code>, ou baissez le maximum.</p></div></details>
+          <details class="faq"><summary>Un joueur peut-il quitter en pleine partie ?</summary><div><p><code>/lg leave</code> est refusé pendant une partie pour ne pas fausser le décompte des vivants. Le joueur doit se déconnecter&nbsp;; la partie s'arrête seulement si le salon se vide.</p></div></details>
+          <details class="faq"><summary>ProtocolLib est-il obligatoire ?</summary><div><p>Non, mais sans lui les autres joueurs peuvent voir l'objet que vous tenez en main — une fiole de Sorcière trahit vite son propriétaire.</p></div></details>
+          <details class="faq"><summary>Mon clic gauche sur un joueur ne vote pas.</summary><div><p>C'est voulu&nbsp;: seul le clic <strong>droit</strong> vote, pour éviter les votes accidentels en frappant quelqu'un dans la foule.</p></div></details>
+        </section>
+
+      </article>
+    </div>
+  </main>
+  <svg class="foret" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 140 L0 100 L6 97 L14 62 L23 62 L32 19 L41 62 L50 62 L58 97 L57 87 L63 57 L70 57 L78 20 L85 57 L92 57 L99 87 L98 85 L103 38 L109 38 L115 -19 L121 38 L128 38 L133 85 L135 80 L142 56 L150 56 L159 26 L167 56 L176 56 L183 80 L184 88 L193 71 L203 71 L213 51 L224 71 L234 71 L243 88 L240 96 L247 57 L254 57 L261 9 L268 57 L276 57 L282 96 L283 96 L292 63 L301 63 L311 24 L320 63 L330 63 L338 96 L335 76 L340 26 L346 26 L352 -34 L358 26 L364 26 L369 76 L370 76 L375 46 L382 46 L388 8 L395 46 L401 46 L407 76 L407 86 L413 57 L420 57 L427 21 L434 57 L440 57 L446 86 L449 96 L458 71 L468 71 L478 42 L489 71 L499 71 L508 96 L509 94 L520 64 L532 64 L545 26 L557 64 L570 64 L581 94 L579 96 L587 70 L596 70 L605 38 L615 70 L624 70 L632 96 L634 91 L643 64 L654 64 L665 31 L676 64 L687 64 L696 91 L693 94 L698 45 L704 45 L711 -15 L717 45 L723 45 L728 94 L732 94 L742 63 L754 63 L766 24 L778 63 L789 63 L800 94 L798 81 L807 52 L816 52 L826 17 L836 52 L846 52 L854 81 L854 94 L863 76 L873 76 L884 53 L894 76 L904 76 L913 94 L912 99 L919 82 L928 82 L937 61 L945 82 L954 82 L962 99 L961 84 L969 44 L977 44 L986 -4 L994 44 L1003 44 L1010 84 L1013 89 L1023 63 L1035 63 L1048 31 L1060 63 L1072 63 L1083 89 L1081 79 L1088 49 L1097 49 L1106 12 L1116 49 L1125 49 L1132 79 L1132 93 L1140 63 L1148 63 L1157 26 L1166 63 L1175 63 L1182 93 L1181 97 L1187 55 L1195 55 L1202 4 L1209 55 L1216 55 L1223 97 L1223 79 L1229 36 L1237 36 L1244 -17 L1252 36 L1259 36 L1266 79 L1269 78 L1280 30 L1292 30 L1304 -30 L1317 30 L1329 30 L1340 78 L1339 86 L1348 48 L1359 48 L1370 2 L1380 48 L1391 48 L1401 86 L1397 91 L1402 65 L1408 65 L1413 34 L1419 65 L1425 65 L1430 91 L1431 83 L1437 54 L1444 54 L1451 19 L1458 54 L1465 54 L1471 83 L1440 100 L1440 140 Z"/></svg>
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="pied__grille">
+        <div class="pied__marque">
+          <img src="assets/logo.svg" alt="Logo Loup-Garou RPS">
+          <div><b>Loup-Garou RPS</b><span class="italique">Le village s'endort. Pas tout le monde.</span></div>
+        </div>
+        <div>
+          <h4>Le plugin</h4>
+          <ul><li><a href="telecharger.html">Télécharger</a></li><li><a href="telecharger.html#installation">Installation</a></li><li><a href="telecharger.html#journal">Journal des versions</a></li></ul>
+        </div>
+        <div>
+          <h4>L'almanach</h4>
+          <ul><li><a href="wiki.html#roles">Les rôles</a></li><li><a href="wiki.html#commandes">Commandes</a></li><li><a href="wiki.html#faq">FAQ</a></li></ul>
+        </div>
+        <div>
+          <h4>Le village</h4>
+          <ul><li><a href="contact.html">Contact</a></li><li><a href="licence.html">Licence MIT</a></li></ul>
+        </div>
+      </div>
+      <div class="pied__bas">
+        <span>© 2026 LoupGarouRPS — code distribué sous <a href="licence.html">licence MIT</a>.</span>
+        <span>Projet de fans, non affilié à Mojang, Microsoft ni aux éditeurs du jeu de cartes original.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

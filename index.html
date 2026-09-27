@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loup-Garou RPS</title>
+  <meta name="description" content="Le Loup-Garou de Thiercelieux joué pour de vrai dans Minecraft : maisons, portes, nuits à l'aveugle et bûcher. Plugin Paper gratuit et open source.">
+  <meta name="theme-color" content="#1C1446">
+  <meta property="og:title" content="Loup-Garou RPS">
+  <meta property="og:description" content="Le Loup-Garou de Thiercelieux joué pour de vrai dans Minecraft : maisons, portes, nuits à l'aveugle et bûcher. Plugin Paper gratuit et open source.">
+  <meta property="og:image" content="assets/logo.svg">
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+  <script>try{var t=localStorage.getItem("lg-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=JetBrains+Mono:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="sr" href="#contenu">Aller au contenu</a>
+  <header class="entete">
+    <div class="conteneur">
+      <a class="marque" href="index.html">
+        <img src="assets/logo-mark.svg" alt="" width="48" height="48">
+        <span><b>Loup-Garou RPS</b><small>l'almanach du village</small></span>
+      </a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">☰</button>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="index.html" aria-current="page">Accueil</a>
+        <a href="telecharger.html">Télécharger</a>
+        <a href="wiki.html">Wiki</a>
+        <a href="licence.html">Licence</a>
+        <a href="contact.html">Contact</a>
+        <button class="bascule" type="button"><span class="astre-mini"></span><span class="libelle">Jour</span></button>
+      </nav>
+    </div>
+  </header>
+  <main id="contenu">
+    <section class="heros">
+      <div class="conteneur heros__grille">
+        <div>
+          <div class="heros__surtitre">
+            <span class="tampon">Plugin Paper 1.19+</span>
+            <span class="pastille jaune">v0.1.0 · gratuit</span>
+          </div>
+          <h1>
+            <span class="l1">Le village</span>
+            <span class="l2">s'endort.</span>
+            <span class="l3">Pas tout le monde.</span>
+          </h1>
+          <p class="heros__texte">Le Loup-Garou de Thiercelieux, joué <span class="surligne">pour de vrai</span> dans Minecraft&nbsp;: chacun sa maison, on frappe aux portes la nuit, on se retrouve au feu de camp le matin — et on vote au bûcher.</p>
+          <div class="heros__actions">
+            <a class="bouton" href="telecharger.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v13M6 11l6 6 6-6M4 21h16"/></svg>
+              Télécharger
+            </a>
+            <a class="bouton creme" href="wiki.html">Lire l'almanach</a>
+          </div>
+        </div>
+        <div class="heros__scene" aria-hidden="true">
+          <div class="heros__astre"></div>
+          <span class="etoile" style="left:4%;top:4%">✦</span>
+          <span class="etoile" style="right:6%;top:10%;animation-delay:1s">✶</span>
+          <span class="etoile" style="left:12%;bottom:6%;animation-delay:2s">✦</span>
+          <div class="heros__carte c1"><img src="assets/cartes/role_sorciere.png" alt="" width="512" height="512"></div>
+          <div class="heros__carte c2"><img src="assets/cartes/role_loup.png" alt="" width="512" height="512"></div>
+          <div class="heros__carte c3"><img src="assets/cartes/role_voyante.png" alt="" width="512" height="512"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ruban" aria-hidden="true">
+      <div class="ruban__piste">
+        <span>La nuit tombe sur le village</span><span>Les loups ouvrent les yeux</span><span>La sorcière hésite</span><span>Le coq chante</span><span>Qui monte au bûcher&nbsp;?</span>
+        <span>La nuit tombe sur le village</span><span>Les loups ouvrent les yeux</span><span>La sorcière hésite</span><span>Le coq chante</span><span>Qui monte au bûcher&nbsp;?</span>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="conteneur">
+        <div class="titre-section revele">
+          <span class="chapitre">Chapitre premier</span>
+          <h2>Pas un mini&#8209;jeu.<br><span class="riso">Un village.</span></h2>
+          <p>Ici, pas de menu à cliquer depuis le spawn. Tout se joue avec son corps&nbsp;: on marche jusqu'à la bonne porte, on la frappe, on se cache, on ment les yeux dans les yeux.</p>
+        </div>
+        <div class="affichettes">
+          <article class="affichette">
+            <span class="num">01</span>
+            <h3>Une maison chacun</h3>
+            <p>Chaque joueur reçoit sa maison sur la map. La nuit, les rôles agissent en cliquant sur les <strong>vraies portes</strong> et paillassons du village.</p>
+          </article>
+          <article class="affichette">
+            <span class="num">02</span>
+            <h3>Des nuits à l'aveugle</h3>
+            <p>Tout le monde est aveuglé. Seul le rôle dont c'est le tour rouvre les yeux, le temps de son créneau, dans l'ordre officiel de la nuit.</p>
+          </article>
+          <article class="affichette">
+            <span class="num">03</span>
+            <h3>Des morts mises en scène</h3>
+            <p>Éclair sur le bûcher, glas, puis révélation&nbsp;: la carte du défunt est accrochée au-dessus de sa porte et du feu de camp.</p>
+          </article>
+          <article class="affichette">
+            <span class="num">04</span>
+            <h3>Cartes &amp; ambiance</h3>
+            <p>Un resource pack envoyé automatiquement&nbsp;: 15 cartes illustrées, chant du coq, hurlements, cloche du vote. Et vos propres sons si vous le voulez.</p>
+          </article>
+          <article class="affichette">
+            <span class="num">05</span>
+            <h3>Un skin par rôle</h3>
+            <p>Pendant son créneau, le Loup devient loup et la Sorcière sorcière. Déposez un PNG, le plugin s'occupe de la signature Mojang.</p>
+          </article>
+          <article class="affichette">
+            <span class="num">06</span>
+            <h3>Salons &amp; boussole</h3>
+            <p>Plusieurs parties en parallèle, une boussole pour rejoindre un salon, un lancement automatique quand il est plein.</p>
+          </article>
+          <article class="affichette">
+            <span class="num">07</span>
+            <h3>Capitaine &amp; Corbeau</h3>
+            <p>Élection du Capitaine au premier jour (vote double, il tranche les égalités) et +2 voix discrètes offertes par le Corbeau.</p>
+          </article>
+          <article class="affichette">
+            <span class="num">08</span>
+            <h3>Tout se règle</h3>
+            <p>Durée de chaque rôle via un menu en jeu, composition des rôles par salon, durée du débat et des votes dans <code>config.yml</code>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="dents" style="--haut: var(--papier); --bas: var(--encre-nuit)"></div>
+    <section class="section section--nuit" id="nuit">
+      <div class="conteneur">
+        <div class="titre-section revele">
+          <span class="chapitre">Chapitre deuxième</span>
+          <h2>Une nuit <span class="riso">au village</span></h2>
+          <p>Le plugin appelle les rôles un par un, dans cet ordre. Un rôle absent de la partie (ou mort) est simplement sauté.</p>
+        </div>
+        <div class="onglets" role="tablist" aria-label="Choix de la nuit">
+          <button type="button" role="tab" aria-selected="true" data-nuit="nuit-1">Première nuit</button>
+          <button type="button" role="tab" aria-selected="false" data-nuit="nuit-n">Nuits suivantes</button>
+        </div>
+        <ol class="chrono" id="nuit-1">
+          <li style="--c:var(--cupidon)"><img src="assets/cartes/role_cupidon.png" alt=""><b>Cupidon</b><small>unit deux amoureux · 40 s</small></li>
+          <li style="--c:var(--fiole)"><img src="assets/cartes/role_salvateur.png" alt=""><b>Salvateur</b><small>protège une maison · 30 s</small></li>
+          <li style="--c:var(--sortilege)"><img src="assets/cartes/role_voyante.png" alt=""><b>Voyante</b><small>sonde un rôle · 20 s</small></li>
+          <li style="--c:var(--sang)"><img src="assets/cartes/role_loup.png" alt=""><b>Loups-Garous</b><small>choisissent la victime · 90 s</small></li>
+          <li style="--c:var(--sang)"><img src="assets/cartes/role_infectpere.png" alt=""><b>Infect Père</b><small>peut infecter · 30 s</small></li>
+          <li style="--c:var(--sortilege)"><img src="assets/cartes/role_loupblanc.png" alt=""><b>Loup Blanc</b><small>tue en solitaire · 20 s</small></li>
+          <li style="--c:var(--fiole)"><img src="assets/cartes/role_sorciere.png" alt=""><b>Sorcière</b><small>vie ou mort · 45 s</small></li>
+          <li style="--c:var(--lanterne)"><img src="assets/cartes/role_voleur.png" alt=""><b>Voleur</b><small>échange deux rôles · 25 s</small></li>
+          <li style="--c:var(--lanterne)"><img src="assets/cartes/role_corbeau.png" alt=""><b>Corbeau</b><small>+2 voix à quelqu'un · 15 s</small></li>
+        </ol>
+        <ol class="chrono" id="nuit-n" hidden>
+          <li style="--c:var(--lanterne)"><img src="assets/cartes/role_juge.png" alt=""><b>Juge</b><small>une nuit sur deux · 25 s</small></li>
+          <li style="--c:var(--fiole)"><img src="assets/cartes/role_salvateur.png" alt=""><b>Salvateur</b><small>protège une maison · 30 s</small></li>
+          <li style="--c:var(--sortilege)"><img src="assets/cartes/role_voyante.png" alt=""><b>Voyante</b><small>sonde un rôle · 20 s</small></li>
+          <li style="--c:var(--sang)"><img src="assets/cartes/role_loup.png" alt=""><b>Loups-Garous</b><small>choisissent la victime · 90 s</small></li>
+          <li style="--c:var(--sang)"><img src="assets/cartes/role_infectpere.png" alt=""><b>Infect Père</b><small>peut infecter · 30 s</small></li>
+          <li style="--c:var(--sortilege)"><img src="assets/cartes/role_loupblanc.png" alt=""><b>Loup Blanc</b><small>tue en solitaire · 20 s</small></li>
+          <li style="--c:var(--fiole)"><img src="assets/cartes/role_sorciere.png" alt=""><b>Sorcière</b><small>vie ou mort · 45 s</small></li>
+          <li style="--c:var(--lanterne)"><img src="assets/cartes/role_voleur.png" alt=""><b>Voleur</b><small>échange deux rôles · 25 s</small></li>
+          <li style="--c:var(--lanterne)"><img src="assets/cartes/role_corbeau.png" alt=""><b>Corbeau</b><small>+2 voix à quelqu'un · 15 s</small></li>
+        </ol>
+        <p style="margin-top:2.5rem;color:#C9BFEF">À l'aube&nbsp;: annonce des morts au feu de camp, débat (2&nbsp;min), élection du Capitaine le premier jour, puis vote du village. <a href="wiki.html#deroulement">Tout le déroulement →</a></p>
+      </div>
+    </section>
+    <div class="dents" style="--haut: var(--encre-nuit); --bas: var(--papier); transform: scaleY(-1)"></div>
+
+    <section class="section">
+      <div class="conteneur">
+        <div class="titre-section revele">
+          <span class="chapitre">Chapitre troisième</span>
+          <h2>Quinze cartes, <span class="riso-violet">trois camps</span></h2>
+          <p>Le Village doit éliminer les loups. Les Loups doivent dévorer le village. Et le Loup Blanc veut être le dernier debout.</p>
+        </div>
+        <div class="jeu">
+          <a class="carte-role" href="wiki.html#role-loup-garou"><figure><img src="assets/cartes/role_loup.png" alt="" loading="lazy"><figcaption>Loup-Garou<br><span class="pastille loups">Loups</span></figcaption></figure></a>
+          <a class="carte-role" href="wiki.html#role-infect-pere"><figure><img src="assets/cartes/role_infectpere.png" alt="" loading="lazy"><figcaption>Infect Père<br><span class="pastille loups">Loups</span></figcaption></figure></a>
+          <a class="carte-role" href="wiki.html#role-loup-blanc"><figure><img src="assets/cartes/role_loupblanc.png" alt="" loading="lazy"><figcaption>Loup Blanc<br><span class="pastille solo">Solitaire</span></figcaption></figure></a>
+          <a class="carte-role" href="wiki.html#role-voyante"><figure><img src="assets/cartes/role_voyante.png" alt="" loading="lazy"><figcaption>Voyante<br><span class="pastille village">Village</span></figcaption></figure></a>
+          <a class="carte-role" href="wiki.html#role-sorciere"><figure><img src="assets/cartes/role_sorciere.png" alt="" loading="lazy"><figcaption>Sorcière<br><span class="pastille village">Village</span></figcaption></figure></a>
+          <a class="carte-role" href="wiki.html#role-salvateur"><figure><img src="assets/cartes/role_salvateur.png" alt="" loading="lazy"><figcaption>Salvateur<br><span class="pastille village">Village</span></figcaption></figure></a>
+          <a class="carte-role" href="wiki.html#role-cupidon"><figure><img src="assets/cartes/role_cupidon.png" alt="" loading="lazy"><figcaption>Cupidon<br><span class="pastille village">Village</span></figcaption></figure></a>
+          <a class="carte-role" href="wiki.html#role-chasseur"><figure><img src="assets/cartes/role_chasseur.png" alt="" loading="lazy"><figcaption>Chasseur<br><span class="pastille village">Village</span></figcaption></figure></a>
+          <a class="carte-role" href="wiki.html#role-juge"><figure><img src="assets/cartes/role_juge.png" alt="" loading="lazy"><figcaption>Juge<br><span class="pastille village">Village</span></figcaption></figure></a>
+          <a class="carte-role" href="wiki.html#role-corbeau"><figure><img src="assets/cartes/role_corbeau.png" alt="" loading="lazy"><figcaption>Corbeau<br><span class="pastille village">Village</span></figcaption></figure></a>
+          <a class="carte-role" href="wiki.html#role-voleur"><figure><img src="assets/cartes/role_voleur.png" alt="" loading="lazy"><figcaption>Voleur<br><span class="pastille village">Village</span></figcaption></figure></a>
+          <a class="carte-role" href="wiki.html#role-petite-fille"><figure><img src="assets/cartes/role_petitefille.png" alt="" loading="lazy"><figcaption>Petite Fille<br><span class="pastille village">Village</span></figcaption></figure></a>
+          <a class="carte-role" href="wiki.html#role-idiot"><figure><img src="assets/cartes/role_idiot.png" alt="" loading="lazy"><figcaption>Idiot<br><span class="pastille village">Village</span></figcaption></figure></a>
+          <a class="carte-role" href="wiki.html#role-villageois"><figure><img src="assets/cartes/role_villageois.png" alt="" loading="lazy"><figcaption>Villageois<br><span class="pastille village">Village</span></figcaption></figure></a>
+          <a class="carte-role" href="wiki.html#role-capitaine"><figure><img src="assets/cartes/role_capitaine.png" alt="" loading="lazy"><figcaption>Capitaine<br><span class="pastille jaune">Titre élu</span></figcaption></figure></a>
+        </div>
+      </div>
+    </section>
+
+    <div class="ruban jaune" aria-hidden="true">
+      <div class="ruban__piste">
+        <span>Paper 1.19.2+</span><span>Java 17</span><span>ProtocolLib conseillé</span><span>Multi-salons</span><span>Resource pack auto</span><span>Licence MIT</span>
+        <span>Paper 1.19.2+</span><span>Java 17</span><span>ProtocolLib conseillé</span><span>Multi-salons</span><span>Resource pack auto</span><span>Licence MIT</span>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="conteneur appel revele">
+        <img src="assets/logo.svg" alt="Sceau Loup-Garou RPS">
+        <div>
+          <span class="chapitre">Épilogue</span>
+          <h2>Allumez le <span class="riso">feu de camp.</span></h2>
+          <p style="font-size:1.15rem;max-width:44ch">Un fichier <code>.jar</code>, un resource pack, une map avec des maisons. Votre premier village peut ouvrir ce soir.</p>
+          <div class="heros__actions">
+            <a class="bouton jaune" href="telecharger.html">Télécharger v0.1.0</a>
+            <a class="bouton creme" href="wiki.html#premiere-partie">Première partie en 5 étapes</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <svg class="foret" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 140 L0 100 L6 97 L14 62 L23 62 L32 19 L41 62 L50 62 L58 97 L57 87 L63 57 L70 57 L78 20 L85 57 L92 57 L99 87 L98 85 L103 38 L109 38 L115 -19 L121 38 L128 38 L133 85 L135 80 L142 56 L150 56 L159 26 L167 56 L176 56 L183 80 L184 88 L193 71 L203 71 L213 51 L224 71 L234 71 L243 88 L240 96 L247 57 L254 57 L261 9 L268 57 L276 57 L282 96 L283 96 L292 63 L301 63 L311 24 L320 63 L330 63 L338 96 L335 76 L340 26 L346 26 L352 -34 L358 26 L364 26 L369 76 L370 76 L375 46 L382 46 L388 8 L395 46 L401 46 L407 76 L407 86 L413 57 L420 57 L427 21 L434 57 L440 57 L446 86 L449 96 L458 71 L468 71 L478 42 L489 71 L499 71 L508 96 L509 94 L520 64 L532 64 L545 26 L557 64 L570 64 L581 94 L579 96 L587 70 L596 70 L605 38 L615 70 L624 70 L632 96 L634 91 L643 64 L654 64 L665 31 L676 64 L687 64 L696 91 L693 94 L698 45 L704 45 L711 -15 L717 45 L723 45 L728 94 L732 94 L742 63 L754 63 L766 24 L778 63 L789 63 L800 94 L798 81 L807 52 L816 52 L826 17 L836 52 L846 52 L854 81 L854 94 L863 76 L873 76 L884 53 L894 76 L904 76 L913 94 L912 99 L919 82 L928 82 L937 61 L945 82 L954 82 L962 99 L961 84 L969 44 L977 44 L986 -4 L994 44 L1003 44 L1010 84 L1013 89 L1023 63 L1035 63 L1048 31 L1060 63 L1072 63 L1083 89 L1081 79 L1088 49 L1097 49 L1106 12 L1116 49 L1125 49 L1132 79 L1132 93 L1140 63 L1148 63 L1157 26 L1166 63 L1175 63 L1182 93 L1181 97 L1187 55 L1195 55 L1202 4 L1209 55 L1216 55 L1223 97 L1223 79 L1229 36 L1237 36 L1244 -17 L1252 36 L1259 36 L1266 79 L1269 78 L1280 30 L1292 30 L1304 -30 L1317 30 L1329 30 L1340 78 L1339 86 L1348 48 L1359 48 L1370 2 L1380 48 L1391 48 L1401 86 L1397 91 L1402 65 L1408 65 L1413 34 L1419 65 L1425 65 L1430 91 L1431 83 L1437 54 L1444 54 L1451 19 L1458 54 L1465 54 L1471 83 L1440 100 L1440 140 Z"/></svg>
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="pied__grille">
+        <div class="pied__marque">
+          <img src="assets/logo.svg" alt="Logo Loup-Garou RPS">
+          <div><b>Loup-Garou RPS</b><span class="italique">Le village s'endort. Pas tout le monde.</span></div>
+        </div>
+        <div>
+          <h4>Le plugin</h4>
+          <ul><li><a href="telecharger.html">Télécharger</a></li><li><a href="telecharger.html#installation">Installation</a></li><li><a href="telecharger.html#journal">Journal des versions</a></li></ul>
+        </div>
+        <div>
+          <h4>L'almanach</h4>
+          <ul><li><a href="wiki.html#roles">Les rôles</a></li><li><a href="wiki.html#commandes">Commandes</a></li><li><a href="wiki.html#faq">FAQ</a></li></ul>
+        </div>
+        <div>
+          <h4>Le village</h4>
+          <ul><li><a href="contact.html">Contact</a></li><li><a href="licence.html">Licence MIT</a></li></ul>
+        </div>
+      </div>
+      <div class="pied__bas">
+        <span>© 2026 LoupGarouRPS — code distribué sous <a href="licence.html">licence MIT</a>.</span>
+        <span>Projet de fans, non affilié à Mojang, Microsoft ni aux éditeurs du jeu de cartes original.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

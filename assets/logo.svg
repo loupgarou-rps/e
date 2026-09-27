@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="t">
+  <title id="t">Loup-Garou RPS — logo</title>
+  <defs>
+    <path id="arcHaut" d="M 60 200 A 140 140 0 0 1 340 200"/>
+    <path id="arcBas" d="M 52 200 A 148 148 0 0 0 348 200"/>
+  </defs>
+  <!-- Sceau : ombre décalée rouge puis disque d'encre nuit -->
+  <circle cx="208" cy="208" r="190" fill="#E8341C"/>
+  <circle cx="200" cy="200" r="190" fill="#1C1446"/>
+  <circle cx="200" cy="200" r="176" fill="none" stroke="#FFC23A" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round"/>
+  <circle cx="200" cy="200" r="118" fill="none" stroke="#FFF3D6" stroke-width="2"/>
+
+  <!-- Texte en arc -->
+  <g font-family="'Bowlby One SC', 'Arial Black', Impact, sans-serif" fill="#FFF3D6" text-anchor="middle">
+    <text font-size="40" letter-spacing="3"><textPath href="#arcHaut" startOffset="50%">LOUP-GAROU</textPath></text>
+    <text font-size="21" letter-spacing="5" dominant-baseline="hanging" fill="#FFC23A"><textPath href="#arcBas" startOffset="50%">RÔLEPLAY · IMMERSIF</textPath></text>
+  </g>
+
+  <!-- Étoiles à quatre branches -->
+  <g fill="#FFC23A">
+    <path d="M40 200 l6 -14 l6 14 l-6 14 z"/>
+    <path d="M348 200 l6 -14 l6 14 l-6 14 z"/>
+  </g>
+
+  <!-- Emblème central (même dessin que logo-mark.svg) -->
+  <g transform="translate(100 100)">
+    <circle cx="106" cy="104" r="84" fill="#E8341C"/>
+    <circle cx="100" cy="98" r="84" fill="#FFC23A"/>
+    <circle cx="52" cy="62" r="9" fill="#F2A91E"/>
+    <circle cx="150" cy="150" r="12" fill="#F2A91E"/>
+    <circle cx="160" cy="70" r="6" fill="#F2A91E"/>
+    <g transform="translate(0 6)">
+      <path fill="#1C1446" d="M100 56 L126 62 L150 22 L160 80 L176 98 L160 108 L180 124 L156 130 L168 150 L132 160 L114 182 L100 190 L86 182 L68 160 L32 150 L44 130 L20 124 L40 108 L24 98 L40 80 L50 22 L74 62 Z"/>
+      <path fill="#E8341C" d="M146 36 L140 68 L128 64 Z M54 36 L60 68 L72 64 Z"/>
+      <path fill="#FFC23A" d="M100 70 L108 90 L100 104 L92 90 Z"/>
+      <path fill="#FFF3D6" d="M110 118 L140 104 L130 124 Z M90 118 L60 104 L70 124 Z"/>
+      <path fill="#E8341C" d="M122 115 L130 111 L127 119 Z M78 115 L70 111 L73 119 Z"/>
+      <path fill="#3B2E86" d="M100 128 L112 150 L100 176 L88 150 Z"/>
+      <path fill="#E8341C" d="M90 164 L110 164 L100 176 Z"/>
+    </g>
+  </g>
+</svg>
